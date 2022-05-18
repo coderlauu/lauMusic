@@ -1,0 +1,69 @@
+page {
+    padding: 0 20rpx;
+    /* 给页面设置内上边距-为了不让输入框挡住"最佳匹配"文字 */
+    padding-top: 56px
+}
+
+.input {
+    /* 固定 */
+    position: fixed;
+    top: 0;
+    left: 10rpx;
+    right: 10rpx;
+}
+
+/* 热门搜索 */
+.hot {
+    padding: 10rpx;
+}
+
+.hot .list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hot .tag {
+    font-size: 26rpx;
+    background-color: #fff;
+    padding: 10rpx 12rpx;
+    border-radius: 16rpx;
+    margin-right: 20rpx;
+    margin-top: 20rpx;
+}
+
+.hot .tag:first-of-type {
+    color: #26ce8a;
+}
+
+
+/* 搜索建议区 */
+.search-area {
+    padding: 10rpx;
+}
+
+.search-area .title {
+    color: #26ce8a;
+    font-size: 30rpx;
+    font-weight: 600;
+}
+
+.search-area .searchResults {
+    display: flex;
+    align-items: center;
+    margin-top: 16rpx;
+}
+
+.search-area .searchResults .icon {
+    width: 66rpx;
+    margin-left: -20rpx;
+}
+
+.search-area .searchResults .text {
+    font-size: 28rpx;
+}
+
+.searchResult .title {
+    color: #26ce8a;
+    font-size: 40rpx;
+    font-weight: 600;
+}

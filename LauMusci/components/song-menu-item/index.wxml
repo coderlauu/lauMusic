@@ -1,0 +1,12 @@
+<!-- module:就是对module.exports的引用-->
+<wxs src="../../format.wxs" module="format"></wxs>
+
+<view class="item">
+    <!-- 图片区域 -->
+    <view class="top">
+        <image class="image" mode="widthFix" src="{{item.coverImgUrl}}"></image>
+        <view class="play-counter">{{format.formatCount(item.playCount)}}</view>
+    </view>
+    <!-- 歌名区域 -->   
+    <view class="bottom">{{item.name}}</view>
+</view>

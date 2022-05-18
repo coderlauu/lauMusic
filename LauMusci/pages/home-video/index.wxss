@@ -1,0 +1,11 @@
+/* pages/home-video/index.wxss */
+.video{
+    /* 不能让每个组件独占一行，用flex布局 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item{
+    width: 48%;
+}

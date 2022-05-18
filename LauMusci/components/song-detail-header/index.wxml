@@ -1,0 +1,35 @@
+<wxs src="../../format.wxs" module="format"></wxs>
+<view class="header">
+    <!-- 背景 -->
+    <image class="bg-image" mode="aspectFill" src="{{songMenuInfo.coverImgUrl}}"></image>
+    <!-- 毛玻璃：背景模糊效果 -->
+    <view class="bg-cover"></view>
+
+    <!-- 内容 -->
+    <view class="content">
+        <!-- 大头像 -->
+        <image class="image" mode="aspectFill" src="{{songMenuInfo.coverImgUrl}}"></image>
+
+        <view class="info">
+            <!-- 标题 -->
+            <view class="title>">{{songMenuInfo.name}}</view>
+            <view class="author">
+                <image class="avatar" mode="aspectFill" src="{{songMenuInfo.creator.avatarUrl}}"></image>
+                <text class="nickname">{{songMenuInfo.creator.nickname}}</text>
+            </view>
+            <view class="desc">简介：{{songMenuInfo.description}}</view>
+        </view>
+    </view>
+
+    <!-- 下半部分 -->
+    <view class="operation">
+        <view class="favor item">
+            <image class="icon" mode="widthFix" src="../../assets/images/icons/favor_icon.png"></image>
+            <text class="text">{{format.formatCount(songMenuInfo.subscribedCount)}}</text>
+        </view>
+        <view class="share item">
+            <image class="icon" mode="widthFix" src="../../assets/images/icons/share_icon.png"></image>
+            <text class="text">分享</text>
+        </view>
+    </view>
+</view>

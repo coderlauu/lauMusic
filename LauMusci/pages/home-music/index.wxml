@@ -1,0 +1,53 @@
+<!--pages/home-music/index.wxml-->
+
+<!-- 搜索框 -->
+<van-search shape="round" placeholder="请输入搜索关键词" disabled="true" bind:click-input="handleSearchClick" background="#fafafa">
+</van-search>
+
+<!-- 轮播图 -->
+<swiper class="swiper" indicator-dots indicator-active-color="#fff" autoplay circular style="height:{{swiperHeight}}px">
+    <block wx:for="{{banners}}" wx:key="bannerId">
+        <swiper-item class="swiper-item">
+            <image class="swiper-image" src="{{item.pic}}" mode="widthFix" bindload="handleSwiperImageLoaded"></image>
+        </swiper-item>
+    </block>
+</swiper>
+
+<!-- 推荐歌曲 -->
+<view class="recommend-song">
+    <!-- 接收area-header中的点击事件,并设置自定义事件,对其进一步的添加方法 ->回到js中添加方法 -->
+    <area-header title="推荐歌曲" bind:click="handleMoreClick"></area-header>
+    <view class="song-list">
+        <block wx:for="{{recommendSongs}}" wx:key="id">
+            <song-item-v1 item="{{item}}" bindtap="handleSongItemClick" data-index="{{index}}"></song-item-v1>
+        </block>
+    </view>
+</view>
+
+<!-- 热门歌单/推荐歌单 -->
+<view class="song-menu">
+    <song-menu-area title="热门歌单" songMenu="{{hotSongMenu}}"></song-menu-area>
+    <song-menu-area title="推荐歌单" songMenu="{{recommendSongMenu}}"></song-menu-area>
+</view>
+
+<!-- 巅峰榜单 -->
+<view class="ranking">
+    <area-header title="巅峰榜" showRight="{{false}}"></area-header>
+    <block wx:for="{{rankings}}" wx:key="index">
+        <!-- data-*属性用于存储页面的自定义数据 ->data-属性名="属性值" ->属性名自定义，属性值须唯一标识符 -->
+        <ranking-area-item item="{{item}}" bindtap="handleClickRankingItem" data-idx="{{index}}"></ranking-area-item>
+    </block>
+</view>
+
+<!-- 播放工具栏 -->
+<view class="play-bar">
+    <!-- data-id：取到歌曲的id，才可以在event.currentTarget中找到对应歌曲id -->
+    <view class="left" bindtap="handleClickSongDetail" data-id="{{currentSong.id}}">
+        <image class="album album-animation" mode="aspectFill" src="{{currentSong.al.picUrl}}"  style="animation-play-state: {{playAnimState}};"></image>
+        <view class="name">{{currentSong.name}}</view>
+    </view>
+    <view class="right">
+        <image class="icon play" src="/assets/images/music/{{isPlaying ? 'pause' : 'play'}}_icon.png" bindtap="handlePlayBtnClick"></image> 
+        <image class="icon playList" src="/assets/images/music/playlist_icon.png"></image>
+    </view>
+</view>

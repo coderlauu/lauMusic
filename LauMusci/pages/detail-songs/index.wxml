@@ -1,0 +1,24 @@
+<block wx:if="{{rankingInfo.name}}">
+    <area-header title="{{rankingInfo.name}}" showRight="{{false}}">
+    </area-header>
+</block>
+<block wx:if="{{songMenuInfo.name}}">
+    <song-detail-header songMenuInfo="{{songMenuInfo}}"></song-detail-header>
+</block>
+
+<!-- 要遍历的大区域 -->
+<view class="song-list">
+
+    <!-- 巅峰榜单/热门歌曲(更多)的详情 -->
+    <!-- 遍历的一个区块,以及具体要遍历什么内容-->
+    <block wx:for="{{rankingInfo.tracks}}" wx:key="id">
+        <!-- 只要是遍历，就能取到index值(索引从0开始) -->
+        <song-item-v2 item="{{item}}" index="{{index+1}}" bindtap="handleSongItemClick" data-index="{{index}}"></song-item-v2>
+    </block>
+
+    <!-- 热门歌单/推荐歌单的详情 -->
+    <block wx:for="{{songMenuInfo.tracks}}" wx:key="id">
+        <!-- 只要是遍历，就能取到index值(索引从0开始) -->
+        <song-item-v2 item="{{item}}" index="{{index+1}}"></song-item-v2>
+    </block>
+</view>

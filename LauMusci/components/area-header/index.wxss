@@ -1,0 +1,29 @@
+/* components/area-header/index.wxss */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 88rpx;
+}
+
+.header .title {
+    font-size: 40rpx;
+    font-weight: 700;
+}
+
+/* 伪类:empty判断slot类里面是否为空，若不为空则显示其子元素，为空则给后面的类元素添加样式 */
+.header .slot:empty+.default {
+    display: flex;
+}
+
+.header .default {
+    display: none;
+    align-items: center;
+    font-size: 28rpx;
+    color: #777;
+}
+
+.header .default .icon {
+    width: 50rpx;
+    height: 50rpx;
+}

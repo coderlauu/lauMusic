@@ -1,0 +1,9 @@
+<!-- 渲染数据 -->
+<view class="video">
+    <view wx:for="{{topMVs}}" class="item" wx:key="id">
+        <video-item-v1 bingtap="handleVideoItemClick" 
+                       item="{{item}}"
+                       >
+        </video-item-v1>
+    </view>
+</view>

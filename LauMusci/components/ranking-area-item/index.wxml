@@ -1,0 +1,26 @@
+<wxs src="../../format.wxs" module="format"></wxs>
+<view class="ranking-list">
+    <!-- 左半部分 -->
+    <view class="left">
+        <!-- 左标题 -->
+        <view class="left-title">{{item.name}}</view>
+        <!-- 左top容器 -->
+        <view class="left-top3">
+            <!-- 左top -->
+            <block wx:for="{{3}}" wx:for-item="index" wx:key="*this">
+                <!-- 左top3每一个item -->
+                <view class="left-top3-item">
+                    <!-- 这里的标签不能用view，因为会独占一行 -->
+                    <text class="songName">{{index+1}}. {{item.songList[index].name}}</text>
+                    <text class="singer"> - {{item.songList[index].ar[0].name}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+
+    <!-- 右半部分 -->
+    <view class="album">
+        <image class="image" src="{{item.coverImgUrl}}" mode="aspectFill"></image>
+        <view class="play-counter">{{format.formatCount(item.playCount)}}</view>
+    </view>
+</view>

@@ -1,0 +1,19 @@
+.menu-list{
+    /* 让多行并排成一行 */
+    white-space: nowrap;
+    /* 使元素占用页面的整个宽度 */
+    width:100vw;
+    position:relative;
+    left: -20rpx;
+}
+.menu-item{
+    /* 顶部对齐 */
+    vertical-align: top; 
+    /* 块级元素不独占一行，将多余空间填满 */
+    display: inline-block;
+    margin-left: 20rpx; 
+    width: 220rpx;
+}
+.menu-item:last-of-type{
+    margin-right: 20rpx;
+}

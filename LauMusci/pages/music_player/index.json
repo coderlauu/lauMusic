@@ -1,0 +1,9 @@
+{
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "song-item-v2":"../../components/song-item-v2/index",
+    "song-item-v1":"../../components/song-item-v1/index",
+    "nav-bar":"../../baseUi/nav-bar/index"
+  }
+}

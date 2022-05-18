@@ -1,0 +1,4 @@
+page{
+    padding: 0 20rpx;
+    /* top: -100px; */
+}

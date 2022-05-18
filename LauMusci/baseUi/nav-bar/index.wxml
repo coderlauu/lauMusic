@@ -1,0 +1,26 @@
+<!-- baseUi -> nav-bar -> 为公共导航栏布局与样式，适用于所有类似项目 -->
+
+<view class="nav">
+    <!-- 设备状态栏 -->
+    <view style="height:{{statusBarHeight}}px;"></view>
+
+    <!-- 导航栏 -->
+    <view class="nav-bar" style="height:{{navBarHeight}}px">
+        <!-- 左 -->
+        <view class="left" bindtap="handleBackLast">
+            <!-- 为左边预留插槽，便于后续添加其它功能(主页) -->
+            <view class="left-slot"><slot name="left"></slot></view>
+            <view class="left-arrow">
+                <image class="icon" mode="widthFix" src="../../assets/images/icons/arrow-left.png"></image>
+            </view>
+        </view>
+        <!-- 中 -->
+        <view class="center">
+            <!-- 插槽，与标题栏互斥显示 -->
+            <view class="center-slot"><slot name="title"></slot></view>
+            <view class="center-title">{{title}}</view>
+        </view>
+        <!-- 右 -->
+        <view class="right"></view>
+    </view>
+</view>

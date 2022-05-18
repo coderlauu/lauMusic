@@ -1,0 +1,90 @@
+/* 通过调试器里的wxml结构找到input内的class类名，强制修改，增加权重 */
+page{
+    padding: 0 20rpx;
+}
+
+/* 轮播图区域 */
+.swiper{
+    /* 容器四个角设置为圆角 */
+    border-radius: 5px;
+    /* 将多余的(图片)部分隐藏 */
+    overflow: hidden; 
+    /* 某些机型不能出现圆角效果，这是适配的bug问题，解决方法如下 */
+    transform: translateY(0);
+}
+
+.swiper-item{
+    display: flex;
+}
+
+.swiper-item .swiper-image{
+    width: 100%;
+}
+
+.play-bar{
+    /* 底部固定 */
+    position: fixed;
+    height: 44px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fafafa;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 8px;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, .1);
+}
+
+.play-bar .left, .play-bar .right{
+    display: flex;
+    align-items: center;
+}
+
+.play-bar .left .album{
+    /* 图标上移 */
+    position: relative;
+    top: -9px;
+    /* 图标圆形 */
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+}
+
+.play-bar .left .name{
+    margin-left: 8px;
+    font-size: 15px;
+}
+
+.play-bar .right .icon{
+    width: 30px;
+    height: 30px;
+}
+
+.play-bar .right .play{
+    width: 25px;
+    height: 25px;
+    margin-right: 10rpx;
+}
+
+.ranking{
+    padding-bottom: 44px;
+}
+
+/* 帧动画 */
+@keyframes albumRotate{
+    from{
+        /* 从角度0°旋转到360° */
+        transform: rotate(0deg); 
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.album-animation{
+    /* 15秒执行一次 线性 无限播放动画 */
+    animation:albumRotate 15s linear infinite
+}

@@ -1,0 +1,22 @@
+<!-- 引入format.wxs文件里的format函数 -->
+<wxs src="../../format.wxs" module="format"></wxs>
+
+<!-- 每一个video组件 -->
+<view class="item">
+    <!-- 封面 -->
+    <view class="album">
+        <!-- 图片 mode属性:根据图片宽度去修复高度.因为image组件默认宽度320px、高度240px-->
+        <image class="image" src="{{item.cover}}" mode="widthFix"></image>
+        <!-- 播放量和时长 -->
+        <view class="info">
+            <!-- 播放量 -->
+            <view class="count">{{format.formatCount(item.playCount)}}</view>
+            <!-- 播放时长 -->
+            <view class="duration">{{format.formatDuration(item.mv.videos[0].duration)}}</view>
+        </view>
+    </view>
+    <!-- 歌名、歌手信息 -->
+    <view class="content">
+        {{item.name}} - {{item.artistName}}
+    </view>
+</view>

@@ -1,0 +1,17 @@
+<!-- 推荐歌曲列表下的组件 -->
+<!-- 每一个song组件 -->
+<view class="item" bindtap="handleClickItemSong" data-id="{{item.id}}">
+    <image class="image" src="{{item.al.picUrl}}" mode="widthFix"></image>
+
+    <!-- 歌名、歌手、专辑信息 -->
+    <view class="content">
+        <view class="songName">{{item.name}}</view>
+        <view class="source"> {{item.ar[0].name}}  · {{item.al.name}}</view>
+    </view>
+
+    <!-- 右箭头 -->
+    <view class="arrow-right">
+        <image class="icon" src="../../assets/images/icons/arrow-right.png"></image>
+    </view>
+
+</view>

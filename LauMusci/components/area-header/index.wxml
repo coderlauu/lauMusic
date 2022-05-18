@@ -1,0 +1,13 @@
+<view class="header">
+    <!-- 左边-歌单名字 -->
+    <view class="title">{{title}}</view>
+    <!-- 右边-更多&箭头 -->
+    <view class="right" wx:if="{{showRight}}" bindtap="handleClickMore">
+        <view class="slot"><slot></slot></view>
+        <!-- 需求：当slot显示的时候，default不显示，利用css实现 -->
+        <view class="default">
+            <text>{{rightText}}</text>
+            <image class="icon" src="../../assets/images/icons/arrow-right.png"></image>
+        </view>
+    </view>
+</view>

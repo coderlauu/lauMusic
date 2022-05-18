@@ -1,0 +1,14 @@
+<!-- 导航条区域 -->
+<area-header title="{{title}}" ></area-header>
+
+<!-- 可滚动区域 -->
+<scroll-view scroll-x class="menu-list">
+
+    <block wx:for="{{songMenu}}" wx:key="id">
+        <view class="menu-item">
+            <!-- 对每一个歌曲信息块再封装 -->
+            <song-menu-item item="{{item}}" bindtap="handleClickSongItem" data-item="{{item}}"></song-menu-item>
+        </view>
+    </block>
+
+</scroll-view>
